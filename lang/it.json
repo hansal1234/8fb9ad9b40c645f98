@@ -28,6 +28,7 @@
   "lbl_try_again": "Il probeer Assembley Weer più tardi",
   "lbl_retry": "Riprova",
   "msg_page_load_error": "Impossibile caricare la pagina. Controlla la connessione e riprova.",
+  "msg_double_click_to_exit": "Premi di nuovo indietro per uscire",
   "lbl_next":"Prossimo",
   "lbl_finish":"Fine",
   "msg_wrong_url": "Si prega di controllare il tuo URL",

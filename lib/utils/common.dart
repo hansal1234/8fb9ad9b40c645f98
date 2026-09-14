@@ -59,6 +59,13 @@ String? getReferralCodeFromNative() {
   }
 }
 
+void stopBackgroundService() {
+  const platform = const MethodChannel('nixsum/channel');
+  if (isMobile) {
+    platform.invokeMethod('stopService');
+  }
+}
+
 Future<bool> checkWebRTCPermission() async {
   await Permission.microphone.request();
   await Permission.camera.request();

@@ -28,6 +28,7 @@
   "lbl_try_again": "Silakan coba lagi nanti",
   "lbl_retry": "Coba lagi",
   "msg_page_load_error": "Gagal memuat halaman. Periksa koneksi Anda dan coba lagi.",
+  "msg_double_click_to_exit": "Tekan kembali lagi untuk keluar",
   "lbl_next":"Lanjut",
   "lbl_finish":"Menyelesaikan",
   "msg_wrong_url": "Silakan periksa URL Anda",

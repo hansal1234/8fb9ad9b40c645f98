@@ -28,6 +28,7 @@
   "lbl_try_again": "Bitte versuchen Sie es später erneut",
   "lbl_retry": "Erneut versuchen",
   "msg_page_load_error": "Die Seite konnte nicht geladen werden. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+  "msg_double_click_to_exit": "Drücken Sie erneut auf Zurück, um zu beenden",
   "lbl_next":"Nächste",
   "lbl_finish":"Beenden",
   "msg_wrong_url": "Bitte überprüfen Sie Ihre URL",

@@ -28,6 +28,7 @@
   "lbl_try_again": "Probeer het later opnieuw",
   "lbl_retry": "Opnieuw proberen",
   "msg_page_load_error": "Kan de pagina niet laden. Controleer je verbinding en probeer het opnieuw.",
+  "msg_double_click_to_exit": "Druk nogmaals op terug om af te sluiten",
   "lbl_next":"Volgende",
   "lbl_finish":"Finish",
   "msg_wrong_url": "Controleer uw URL",

@@ -28,6 +28,7 @@
   "lbl_try_again": "後でもう一度やり直してください",
   "lbl_retry": "再試行",
   "msg_page_load_error": "ページを読み込めませんでした。接続を確認してもう一度お試しください。",
+  "msg_double_click_to_exit": "もう一度戻るを押すと終了します",
   "lbl_next":"次",
   "lbl_finish":"終了",
   "msg_wrong_url": "あなたのURLをチェックしてください",

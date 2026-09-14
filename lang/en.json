@@ -28,6 +28,7 @@
   "lbl_try_again": "Please try again later",
   "lbl_retry": "Retry",
   "msg_page_load_error": "Unable to load the page. Please check your connection and try again.",
+  "msg_double_click_to_exit": "Press back again to exit",
   "lbl_next": "Next",
   "lbl_finish": "Finish",
   "msg_wrong_url": "Please check your URL",

@@ -58,6 +58,10 @@ class MainActivity : FlutterActivity() {
                 if (startString != null) {
                     result.success(startString)
                 }
+            } else if (call.method == "stopService") {
+                val serviceIntent = Intent(this, AudioService::class.java)
+                stopService(serviceIntent)
+                result.success(true)
             }
         }
 

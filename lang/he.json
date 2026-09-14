@@ -28,6 +28,7 @@
   "lbl_try_again": "الرجاء معاودة المحاولة في وقت لاحق",
   "lbl_retry": "נסה שוב",
   "msg_page_load_error": "לא ניתן היה לטעון את הדף. בדוק את החיבור ונסה שוב.",
+  "msg_double_click_to_exit": "לחץ חזרה שוב כדי לצאת",
   "lbl_next": "التالي",
   "lbl_finish":"יין",
   "msg_wrong_url": "يرجى التحقق من عنوان URL الخاص بك",

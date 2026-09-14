@@ -55,6 +55,8 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   bool _pageError = false;
   String _pageErrorMessage = '';
 
+  DateTime? _lastBackPress;
+
 
   void _getInstanceId() async {
     await Firebase.initializeApp();
@@ -178,13 +180,21 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         return false;
       } else {
         log("--------------Show_exit");
-        showInterstitialAds();
         if (getStringAsync(IS_Exit_POP_UP) == "true") {
+          showInterstitialAds();
           return mConfirmationDialog(() {
             Navigator.of(context).pop(false);
           }, context, appLocalization);
         } else {
-          exit(0);
+          if (_lastBackPress != null && DateTime.now().difference(_lastBackPress!) < const Duration(seconds: 2)) {
+            showInterstitialAds();
+            stopBackgroundService();
+            exit(0);
+          } else {
+            _lastBackPress = DateTime.now();
+            toast(appLocalization!.translate('msg_double_click_to_exit'));
+            return false;
+          }
         }
       }
     }

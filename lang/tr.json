@@ -28,6 +28,7 @@
   "lbl_try_again": "Lütfen daha sonra tekrar deneyiniz",
   "lbl_retry": "Tekrar dene",
   "msg_page_load_error": "Sayfa yüklenemedi. Bağlantınızı kontrol edip tekrar deneyin.",
+  "msg_double_click_to_exit": "Çıkmak için tekrar geri tuşuna basın",
   "lbl_next":"Sonraki",
   "lbl_finish":"Bitiş",
   "msg_wrong_url": "Lütfen URL'nizi kontrol edin",

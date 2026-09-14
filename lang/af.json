@@ -28,6 +28,7 @@
   "lbl_try_again": "Probeer asseblief weer later",
   "lbl_retry": "Probeer weer",
   "msg_page_load_error": "Kon nie die bladsy laai nie. Gaan asseblief jou verbinding na en probeer weer.",
+  "msg_double_click_to_exit": "Druk weer terug om af te sluit",
   "lbl_next":"Vervolgens",
   "lbl_finish":"Voltooi",
   "msg_wrong_url": "Gaan asseblief jou URL na",
