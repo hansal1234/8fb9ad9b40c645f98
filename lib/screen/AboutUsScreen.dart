@@ -161,7 +161,9 @@ class AboutUsScreenState extends State<AboutUsScreen> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            cachedImage(getStringAsync(APPLOGO), width: 100, height: 100).cornerRadiusWithClipRRect(10),
+            getStringAsync(APPLOGO).validate().isEmpty
+              ? Image.asset(brandLogo, width: 200, fit: BoxFit.contain)
+              : cachedImage(getStringAsync(APPLOGO), width: 100, height: 100).cornerRadiusWithClipRRect(10),
             16.height,
             Text(getStringAsync(APPNAME), style: boldTextStyle(size: 22)),
             4.height,

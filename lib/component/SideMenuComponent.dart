@@ -11,6 +11,7 @@ import '../screen/AboutUsScreen.dart';
 import '../screen/HomeScreen.dart';
 import '../utils/AppWidget.dart';
 import '../utils/constant.dart';
+import '../utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 import '../screen/WebScreen.dart';
 
@@ -81,7 +82,9 @@ class SideMenuComponentState extends State<SideMenuComponent> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  cachedImage(getStringAsync(APPLOGO), height: 55, width: 55, fit: BoxFit.cover).cornerRadiusWithClipRRect(10),
+                  getStringAsync(APPLOGO).validate().isEmpty
+                      ? Image.asset(brandLogo, height: 55, width: 110, fit: BoxFit.contain)
+                      : cachedImage(getStringAsync(APPLOGO), height: 55, width: 55, fit: BoxFit.cover).cornerRadiusWithClipRRect(10),
                   10.width,
                   Text(getStringAsync(APPNAME), style: boldTextStyle(size: 18)).expand(),
                 ],

@@ -1,5 +1,7 @@
 const appIcon = 'assets/ic_logo.png';
 
+const brandLogo = 'assets/logo.png';
+
 const ic_exit = 'assets/ic_exit.png';
 const ic_add = 'assets/ic_add.png';
 const ic_back1 = 'assets/ic_back1.png';

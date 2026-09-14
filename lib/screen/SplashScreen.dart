@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../utils/AppWidget.dart';
 import '../utils/colors.dart';
 import '../utils/constant.dart';
+import '../utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'DashboardScreen.dart';
 import 'WalkThroughScreen1.dart';
@@ -71,7 +72,9 @@ class SplashScreenState extends State<SplashScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     getStringAsync(SPLASH_ENABLE_LOGO).validate() != "false"
-                        ? cachedImage(getStringAsync(SPLASH_LOGO_URL), fit: BoxFit.cover, height: 120, width: 120).cornerRadiusWithClipRRect(10)
+                        ? getStringAsync(SPLASH_LOGO_URL).validate().isEmpty
+                            ? Image.asset(brandLogo, fit: BoxFit.contain, height: 120)
+                            : cachedImage(getStringAsync(SPLASH_LOGO_URL), fit: BoxFit.cover, height: 120, width: 120).cornerRadiusWithClipRRect(10)
                         : SizedBox(),
                     4.height,
                     getStringAsync(SPLASH_ENABLE_TITLE) != "false"
@@ -100,7 +103,11 @@ class SplashScreenState extends State<SplashScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  getStringAsync(SPLASH_ENABLE_LOGO) != "false" ? cachedImage(getStringAsync(SPLASH_LOGO_URL), fit: BoxFit.cover, height: 120, width: 120).cornerRadiusWithClipRRect(10) : SizedBox(),
+                  getStringAsync(SPLASH_ENABLE_LOGO) != "false"
+                      ? getStringAsync(SPLASH_LOGO_URL).validate().isEmpty
+                          ? Image.asset(brandLogo, fit: BoxFit.contain, height: 120)
+                          : cachedImage(getStringAsync(SPLASH_LOGO_URL), fit: BoxFit.cover, height: 120, width: 120).cornerRadiusWithClipRRect(10)
+                      : SizedBox(),
                   getStringAsync(SPLASH_ENABLE_TITLE) != "false"
                       ? Text(getStringAsync(SPLASH_TITLE), style: boldTextStyle(size: 20, color: getColorFromHex(getStringAsync(SPLASH_TITLE_COLOR), defaultColor: primaryColor1)))
                       : SizedBox(),
