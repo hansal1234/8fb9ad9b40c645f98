@@ -287,7 +287,7 @@ class WebScreenState extends State<WebScreen> {
               onReceivedError: (InAppWebViewController controller, WebResourceRequest request, WebResourceError error) {
                 log("onLoadError");
                 log("WebView error: ${error.description}");
-                if (request.isForMainFrame == true && error.errorCode != -3) {
+                if (request.isForMainFrame == true && error.type != WebResourceErrorType.CANCELLED) {
                   _pageError = true;
                   _pageErrorMessage = error.description;
                 }
@@ -295,7 +295,7 @@ class WebScreenState extends State<WebScreen> {
                 setState(() {});
                 pullToRefreshController!.endRefreshing();
               },
-              onHttpError: (InAppWebViewController controller, WebResourceResponse response) {
+              onReceivedHttpError: (InAppWebViewController controller, WebResourceRequest request, WebResourceResponse response) {
                 if ((response.statusCode ?? 0) >= 400) {
                   _pageError = true;
                   _pageErrorMessage = 'HTTP ${response.statusCode}';
