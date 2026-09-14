@@ -58,6 +58,19 @@ jobs:
       - name: Get dependencies
         run: flutter pub get
 
+      - name: Patch pub-cache plugins (replace removed jcenter())
+        shell: bash
+        run: |
+          SEARCH_DIRS="$HOME/.pub-cache $PUB_CACHE $RUNNER_TOOL_CACHE/flutter/.pub-cache"
+          for d in $SEARCH_DIRS; do
+            if [ -n "$d" ] && [ -d "$d" ] && [ -d "$d/hosted/pub.dev" ]; then
+              while IFS= read -r -d '' f; do
+                echo "fixing: $f"
+                sed -i 's/jcenter()/mavenCentral()/g' "$f"
+              done < <(grep -rlZ --include=build.gradle 'jcenter()' "$d/hosted/pub.dev" 2>/dev/null)
+            fi
+          done
+
       - name: Build release APK
         run: flutter build apk --release
 
