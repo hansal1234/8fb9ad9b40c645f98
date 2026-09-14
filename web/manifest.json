@@ -1,11 +1,11 @@
 {
-    "name": "webly_flutter",
-    "short_name": "webly_flutter",
+    "name": "Nixsum",
+    "short_name": "Nixsum",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#161F2C",
+    "theme_color": "#161F2C",
+    "description": "Nixsum - a fast, private browser",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
