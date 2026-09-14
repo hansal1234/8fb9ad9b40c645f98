@@ -157,6 +157,8 @@ Future<model.MainResponse> parseConfig(dynamic json1) async {
         await setValue(MESSENGER, mModel.about!.messenger.validate());
         await setValue(COPYRIGHT, mModel.about!.copyright.validate());
         await setValue(DESCRIPTION, mModel.about!.description.validate());
+        await setValue(PRIVACY_POLICY, mModel.about!.privacyPolicyUrl.validate());
+        await setValue(TERMS_CONDITIONS, mModel.about!.termsConditionsUrl.validate());
       }
 
       // One Single

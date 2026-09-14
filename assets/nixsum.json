@@ -55,9 +55,11 @@
     "skype": "",
     "messenger": "",
     "youtube": "",
-    "isShowAbout": "false",
+    "isShowAbout": "true",
     "copyright": "© 2026 Nixsum",
-    "description": ""
+    "description": "",
+    "privacy_policy_url": "",
+    "terms_conditions_url": ""
   },
   "menu_style": [
     {

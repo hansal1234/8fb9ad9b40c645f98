@@ -84,6 +84,8 @@ const YOUTUBE = 'youtube';
 const MESSENGER = 'messenger';
 const COPYRIGHT = 'copyright';
 const DESCRIPTION = 'description';
+const PRIVACY_POLICY = 'privacy_policy_url';
+const TERMS_CONDITIONS = 'terms_conditions_url';
 
 const MENU_STYLE = 'menu_Style';
 

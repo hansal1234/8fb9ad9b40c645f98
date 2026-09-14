@@ -178,6 +178,25 @@ class AboutUsScreenState extends State<AboutUsScreen> {
                 return SizedBox();
               },
             ),
+            16.height,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                OutlinedButton(
+                  onPressed: () {
+                    launchURLString(getStringAsync(PRIVACY_POLICY));
+                  },
+                  child: Text(appLocalization.translate('lbl_privacy_policy')!),
+                ).visible(getStringAsync(PRIVACY_POLICY).isNotEmpty),
+                (getStringAsync(PRIVACY_POLICY).isNotEmpty && getStringAsync(TERMS_CONDITIONS).isNotEmpty) ? 16.width : 0.width,
+                OutlinedButton(
+                  onPressed: () {
+                    launchURLString(getStringAsync(TERMS_CONDITIONS));
+                  },
+                  child: Text(appLocalization.translate('lbl_terms_condition')!),
+                ).visible(getStringAsync(TERMS_CONDITIONS).isNotEmpty),
+              ],
+            ),
           ],
         ).center(),
       ),

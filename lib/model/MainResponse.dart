@@ -374,6 +374,8 @@ class About {
   String? isShowAbout;
   String? copyright;
   String? description;
+  String? privacyPolicyUrl;
+  String? termsConditionsUrl;
 
   About(
       {this.whatsAppNumber,
@@ -387,7 +389,9 @@ class About {
       this.youtube,
       this.isShowAbout,
       this.copyright,
-      this.description});
+      this.description,
+      this.privacyPolicyUrl,
+      this.termsConditionsUrl});
 
   About.fromJson(Map<String, dynamic> json) {
     whatsAppNumber = json['whatsAppNumber'];
@@ -402,6 +406,8 @@ class About {
     isShowAbout = json['isShowAbout'];
     copyright = json['copyright'];
     description = json['description'];
+    privacyPolicyUrl = json['privacy_policy_url'];
+    termsConditionsUrl = json['terms_conditions_url'];
   }
 
   Map<String, dynamic> toJson() {
@@ -418,6 +424,8 @@ class About {
     data['isShowAbout'] = this.isShowAbout;
     data['copyright'] = this.copyright;
     data['description'] = this.description;
+    data['privacy_policy_url'] = this.privacyPolicyUrl;
+    data['terms_conditions_url'] = this.termsConditionsUrl;
     return data;
   }
 }

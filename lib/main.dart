@@ -33,7 +33,6 @@ void main() async {
   appStore.setLanguage(getStringAsync(APP_LANGUAGE, defaultValue: 'en'));
 
   if (isMobile) {
-    MobileAds.instance.initialize();
     OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
     OneSignal.Debug.setAlertLevel(OSLogLevel.none);
     OneSignal.consentRequired(false);
@@ -50,6 +49,9 @@ void main() async {
     config = await fetchData();
   } catch (e) {
     config = null;
+  }
+  if (isMobile && getStringAsync(ADD_TYPE, defaultValue: NONE) != NONE) {
+    MobileAds.instance.initialize();
   }
   runApp(MyApp(config: config));
 }
