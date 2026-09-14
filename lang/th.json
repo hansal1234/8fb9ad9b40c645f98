@@ -1,10 +1,10 @@
 {
-  "lbl_app_name": "เว็บอันยิ่งใหญ่",
+  "lbl_app_name": "Nixsum",
   "lbl_baseUrl":"URL ฐาน",
   "lbl_loaderStyle": "สไตล์รถตัก",
   "lbl_themeStyle":"สไตล์ธีมแอป",
   "lbl_home":"บ้าน",
-  "lbl_try_demo":"ลองสาธิต",
+
   "lbl_share_app":"แชร์แอป",
   "lbl_rate_app":"ให้คะแนนแอพ",
   "lbl_terms_condition":"ข้อกำหนดและเงื่อนไข",
@@ -19,7 +19,7 @@
   "lbl_yes":"ใช่",
   "lbl_no":"เลขที่",
   "lbl_select_theme":"เลือกธีม",
-  "lbl_example": "ตัวอย่าง",
+
   "lbl_set_up":"ติดตั้ง",
   "lbl_dark_mode": "โหมดมืด",
   "lbl_light_mode": "โหมดแสง",

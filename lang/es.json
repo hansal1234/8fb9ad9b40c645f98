@@ -1,10 +1,10 @@
 {
-  "lbl_app_name": "Mighty web",
+  "lbl_app_name": "Nixsum",
   "lbl_baseUrl":"URL base",
   "lbl_loaderStyle": "Estilo del cargador",
   "lbl_themeStyle":"Aplicación estilo del tema",
   "lbl_home": "Hogar",
-  "lbl_try_demo":"Pruebe la demo",
+
   "lbl_share_app": "Compartir aplicación",
   "lbl_rate_app":"Calificar aplicacion",
   "lbl_terms_condition": "Términos y Condiciones",
@@ -19,7 +19,7 @@
   "lbl_yes":"sí",
   "lbl_no": "No",
   "lbl_select_theme":"Seleccione el tema",
-  "lbl_example": "Ejemplo",
+
   "lbl_set_up":"Configurar",
   "lbl_dark_mode": "Modo oscura",
   "lbl_light_mode": "Modo luz",

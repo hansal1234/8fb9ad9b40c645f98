@@ -1,10 +1,10 @@
 {
-  "lbl_app_name":"Güçlü Web",
+  "lbl_app_name": "Nixsum",
   "lbl_baseUrl":"Taban URL'si",
   "lbl_loaderStyle":"Yükleyici tarzı",
   "lbl_themeStyle":"App Tema Stili",
   "lbl_home":"Ev",
-  "lbl_try_demo":"Demoyu dene",
+
   "lbl_share_app":"Uygulamayı Paylaş",
   "lbl_rate_app":"Oran",
   "lbl_terms_condition":"Şartlar ve koşullar",
@@ -19,7 +19,7 @@
   "lbl_yes":"Evet",
   "lbl_no":"Hayır",
   "lbl_select_theme":"Tema seçin",
-  "lbl_example":"Misal",
+
   "lbl_set_up":"Kurulum",
   "lbl_dark_mode":"Karanlık mod",
   "lbl_light_mode":"Işık modu",

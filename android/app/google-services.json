@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:637648671617:android:ad631e5c99f01c0fee0e80",
         "android_client_info": {
-          "package_name": "com.mighty.web"
+          "package_name": "co.nixsum.app"
         }
       },
       "oauth_client": [
@@ -34,7 +34,7 @@
               "client_id": "637648671617-b869llovsc1amje80q9p2vr4igbs16j4.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.mighty.web"
+                "bundle_id": "co.nixsum.app"
               }
             }
           ]

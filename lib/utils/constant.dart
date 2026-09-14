@@ -1,5 +1,5 @@
 //Root config file (update this before every build)
-const CONFIG_ASSET_PATH = 'assets/mightyweb.json';
+const CONFIG_ASSET_PATH = 'assets/nixsum.json';
 
 //preference
 const mOneSignalID = 'mOne_signal_id';
@@ -95,7 +95,6 @@ const BOTTOMSIDEMENU = 'BOTTOMSIDEMENU';
 const ONESINGLE = 'onesingal';
 const IS_FIRST_TIME = 'IS_FIRST_TIME';
 
-const IS_FROM_TRY_WEBSITE = 'is_from_try_website';
 const DETAIL_PAGE_VARIANT = 'DetailPageVariant';
 const DETAIL_PAGE_VARIANT1 = 'DetailPageVariant1';
 const THEME_VARIANT = 'ThemeVariant';
@@ -236,6 +235,4 @@ List<String> loaderName = [
 ];
 
 // Visibility
-const EnableHome = false;
-const EnableDemo = false;
 const EnableMode = true;

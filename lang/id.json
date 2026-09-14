@@ -1,10 +1,10 @@
 {
-  "lbl_app_name": "perkasa Web",
+  "lbl_app_name": "Nixsum",
   "lbl_baseUrl":"basis URL",
   "lbl_loaderStyle": "loader Style",
   "lbl_themeStyle":"App Gaya Tema",
   "lbl_home": "Rumah",
-  "lbl_try_demo":"Coba Demo",
+
   "lbl_share_app": "Share App",
   "lbl_rate_app":"tingkat App",
   "lbl_terms_condition": "Syarat & Kondisi",
@@ -19,7 +19,7 @@
   "lbl_yes":"Iya",
   "lbl_no": "Tidak",
   "lbl_select_theme":"Pilih tema",
-  "lbl_example": "Contoh",
+
   "lbl_set_up":"Mendirikan",
   "lbl_dark_mode": "gelap Modus",
   "lbl_light_mode": "cahaya Modus",

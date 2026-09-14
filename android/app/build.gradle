@@ -20,7 +20,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.mighty.web"
+    namespace = "co.nixsum.app"
     compileSdkVersion 36
     ndkVersion "29.0.14033849"
 
@@ -30,7 +30,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.mighty.web"
+        applicationId "co.nixsum.app"
         minSdkVersion 24
         targetSdkVersion 36
         versionCode 44

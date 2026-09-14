@@ -1,10 +1,10 @@
 {
-  "lbl_app_name":"Machtig web",
+  "lbl_app_name": "Nixsum",
   "lbl_baseUrl":"Basis-url",
   "lbl_loaderStyle":"Laderstijl",
   "lbl_themeStyle":"App-thema-stijl",
   "lbl_home":"Huis",
-  "lbl_try_demo":"Probeer demo",
+
   "lbl_share_app":"Deel app",
   "lbl_rate_app":"Beoordeel app",
   "lbl_terms_condition":"Regels en voorwaarden",
@@ -19,7 +19,7 @@
   "lbl_yes":"Ja",
   "lbl_no":"Nee",
   "lbl_select_theme":"Selecteer thema",
-  "lbl_example":"Voorbeeld",
+
   "lbl_set_up":"Opgericht",
   "lbl_dark_mode":"Donkere modus",
   "lbl_light_mode":"Lichtmodus",

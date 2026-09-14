@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Mighty Web</string>
+	<string>Nixsum</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -15,7 +15,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Mighty Web</string>
+	<string>Nixsum</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -28,10 +28,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.mighty.web</string>
+			<string>co.nixsum.app</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>mightyweb</string>
+				<string>nixsum</string>
 				<string>com.googleusercontent.apps.637648671617-b869llovsc1amje80q9p2vr4igbs16j4</string>
 			</array>
 		</dict>
@@ -55,21 +55,21 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Mighty Web app requires access to the Camera to upload your photo.</string>
+	<string>Nixsum app requires access to the Camera to upload your photo.</string>
 	<key>NSLocalNetworkUsageDescription</key>
-	<string>Mighty Web requires access to the local network</string>
+	<string>Nixsum requires access to the local network</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Mighty Web requires address permission access to get the current location of the user.</string>
+	<string>Nixsum requires address permission access to get the current location of the user.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Mighty Web requires address permission access to get the current location of the user.</string>
+	<string>Nixsum requires address permission access to get the current location of the user.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Mighty Web requires address permission access to get the current location of the user.</string>
+	<string>Nixsum requires address permission access to get the current location of the user.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Mighty Web app requires access to microphone when you will be used to record your speech at time of  press the "Mic" button.</string>
+	<string>Nixsum app requires access to microphone when you will be used to record your speech at time of  press the "Mic" button.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Mighty Web requires access to the photo library to upload your photo.</string>
+	<string>Nixsum requires access to the photo library to upload your photo.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Mighty Web requires access to the photo library to upload your photo.</string>
+	<string>Nixsum requires access to the photo library to upload your photo.</string>
 	<key>OneSignal_suppress_launch_urls</key>
 	<true/>
 	<key>SKAdNetworkItems</key>

@@ -1,10 +1,10 @@
 {
-  "lbl_app_name":"Могущественный",
+  "lbl_app_name": "Nixsum",
   "lbl_baseUrl":"Базовый URL",
   "lbl_loaderStyle":"Стиль погрузчика",
   "lbl_themeStyle":"Приложение тематический стиль",
   "lbl_home":"Дом",
-  "lbl_try_demo":"Попробуй демонстрировать",
+
   "lbl_share_app":"Поделиться приложением",
   "lbl_rate_app":"Оценить приложение",
   "lbl_terms_condition":"Условия и состояние",
@@ -19,7 +19,7 @@
   "lbl_yes":"да",
   "lbl_no":"Нет",
   "lbl_select_theme":"Выберите тему",
-  "lbl_example":"Пример",
+
   "lbl_set_up":"Настраивать",
   "lbl_dark_mode":"Темный режим",
   "lbl_light_mode":"Световой режим",

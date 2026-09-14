@@ -12,8 +12,8 @@
 	<string>637648671617</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
-	<key>BUNDLE_ID</key>
-	<string>com.mighty.web</string>
+<key>BUNDLE_ID</key>
+ 	<string>co.nixsum.app</string>
 	<key>PROJECT_ID</key>
 	<string>mighty-web</string>
 	<key>STORAGE_BUCKET</key>

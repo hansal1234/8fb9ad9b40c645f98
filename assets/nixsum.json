@@ -1,6 +1,6 @@
 {
   "appconfiguration": {
-    "app_name": "My App",
+    "app_name": "Nixsum",
     "url": "https://nixsum.co",
     "appLanuguage": "en",
     "isJavascriptEnable": "true",
@@ -41,9 +41,9 @@
   },
   "theme": {
     "themeStyle": "Default",
-    "customColor": "#880e4f",
-    "gradientColor1": "#880e4f",
-    "gradientColor2": "#b71c1c"
+    "customColor": "#161f2c",
+    "gradientColor1": "#161f2c",
+    "gradientColor2": "#263238"
   },
   "about": {
     "whatsAppNumber": "",
@@ -56,23 +56,13 @@
     "messenger": "",
     "youtube": "",
     "isShowAbout": "false",
-    "copyright": "© 2026 My App",
+    "copyright": "© 2026 Nixsum",
     "description": ""
   },
   "menu_style": [
     {
       "id": "1",
       "title": "Home",
-      "type": "1",
-      "image": "",
-      "url": "https://nixsum.co",
-      "status": "1",
-      "parent_id": "0",
-      "children": []
-    },
-    {
-      "id": "2",
-      "title": "Menu 2",
       "type": "1",
       "image": "",
       "url": "https://nixsum.co",
@@ -91,9 +81,9 @@
   "tabs": [],
   "splash_configuration": {
     "id": "1",
-    "first_color": "#880e4f",
-    "second_color": "#b71c1c",
-    "title": "My App",
+    "first_color": "#161f2c",
+    "second_color": "#263238",
+    "title": "Nixsum",
     "enable_title": "true",
     "enable_logo": "true",
     "title_color": "#ffffff",

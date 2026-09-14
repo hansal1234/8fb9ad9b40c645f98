@@ -48,10 +48,10 @@ class CustomTheme extends StatelessWidget {
 }
 
 String? getReferralCodeFromNative() {
-  const platform = const MethodChannel('mightyweb/channel');
+  const platform = const MethodChannel('nixsum/channel');
 
   if (isMobile) {
-    var referralCode = platform.invokeMethod('mightyweb/events');
+    var referralCode = platform.invokeMethod('nixsum/events');
 
     return referralCode.toString();
   } else {

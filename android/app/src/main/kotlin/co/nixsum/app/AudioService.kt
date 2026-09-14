@@ -1,4 +1,4 @@
-package com.mighty.web
+package co.nixsum.app
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -54,7 +54,7 @@ class AudioService : Service(), LifecycleObserver {
             manager.createNotificationChannel(notificationChannel)
         }
 
-        val launchIntent = packageManager.getLaunchIntentForPackage("com.mighty.web")
+        val launchIntent = packageManager.getLaunchIntentForPackage("co.nixsum.app")
         if (launchIntent == null) {
             return
         }
@@ -67,7 +67,7 @@ class AudioService : Service(), LifecycleObserver {
 
         val notification: Notification = NotificationCompat.Builder(this, channelId)
             .setSilent(true)
-            .setContentTitle("MightyWeb is running")
+            .setContentTitle("Nixsum is running")
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_MIN)
             .setSmallIcon(R.mipmap.ic_launcher_foreground)

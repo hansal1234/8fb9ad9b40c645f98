@@ -10,7 +10,7 @@ import '../utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 Future<model.MainResponse> fetchData() async {
-  // Config is bundled with the app. Edit assets/mightyweb.json before every build.
+  // Config is bundled with the app. Edit assets/nixsum.json before every build.
   final jsonString = await rootBundle.loadString(CONFIG_ASSET_PATH);
   return await parseConfig(jsonDecode(jsonString));
 }

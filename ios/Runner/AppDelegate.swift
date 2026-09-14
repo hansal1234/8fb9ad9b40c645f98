@@ -12,11 +12,11 @@ import Flutter
   ) -> Bool {
     GeneratedPluginRegistrant.register(with: self)
     let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
-    let referralChannel = FlutterMethodChannel(name: "mightyweb/channel",binaryMessenger: controller.binaryMessenger)
+    let referralChannel = FlutterMethodChannel(name: "nixsum/channel",binaryMessenger: controller.binaryMessenger)
     
     referralChannel.setMethodCallHandler({
         (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
-        if(call.method == "mightyweb/events" && self.strURL != ""){
+        if(call.method == "nixsum/events" && self.strURL != ""){
             print(self.strURL)
             result(self.strURL)
         }else {
@@ -33,7 +33,7 @@ import Flutter
         let newURL = URL(string: url.absoluteString)!
         self.strURL = newURL.absoluteString;
         print(newURL);
-        if let range = self.strURL.range(of: "mightyweb:") {
+        if let range = self.strURL.range(of: "nixsum:") {
             self.strURL.removeSubrange(range)
         }
         print(self.strURL)

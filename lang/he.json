@@ -1,10 +1,10 @@
 {
-  "lbl_app_name": "אינטרנט. الأقوياء",
+  "lbl_app_name": "Nixsum",
   "lbl_baseUrl":"عنوان URL الأساسي",
   "lbl_loaderStyle": "نمط تحميل",
   "lbl_themeStyle":"تطبيق سمة التطبيق",
   "lbl_home":"الصفحة الرئيسية",
-  "lbl_try_demo":"جرب التجريبي",
+
   "lbl_share_app":"شارك التطبيق",
   "lbl_rate_app":"قيم التطبيق",
   "lbl_terms_condition":"الشروط والحالة",
@@ -19,7 +19,7 @@
   "lbl_yes":"نعم",
   "lbl_no":"-",
   "lbl_select_theme":"اختر نمطا",
-  "lbl_example": "مثال",
+
   "lbl_set_up":"اقامة",
   "lbl_dark_mode": "الوضع المظلم",
   "lbl_light_mode": "وضع ضوء",

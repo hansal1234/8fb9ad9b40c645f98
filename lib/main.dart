@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:mightyweb/utils/bloc.dart';
+import 'package:nixsum/utils/bloc.dart';
 import 'package:provider/provider.dart';
 import '../AppTheme.dart';
 import '../app_localizations.dart';

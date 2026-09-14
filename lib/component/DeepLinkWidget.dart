@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mightyweb/screen/WebScreen.dart';
+import 'package:nixsum/screen/WebScreen.dart';
 import '../main.dart';
 import '../utils/bloc.dart';
 import 'package:provider/provider.dart';

@@ -1,4 +1,4 @@
-package com.mighty.web
+package co.nixsum.app
 
 import android.content.BroadcastReceiver
 import android.os.Bundle
@@ -22,8 +22,8 @@ import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugins.GeneratedPluginRegistrant
 
 class MainActivity : FlutterActivity() {
-    private val CHANNEL = "mightyweb/channel"
-    private val EVENTS = "mightyweb/events"
+    private val CHANNEL = "nixsum/channel"
+    private val EVENTS = "nixsum/events"
     private var linksReceiver: BroadcastReceiver? = null
     private var referralCode = ""
     private var startString: String? = null
@@ -81,7 +81,7 @@ class MainActivity : FlutterActivity() {
         startString = intent.data?.toString()
 
         val pm = getSystemService(Context.POWER_SERVICE) as PowerManager
-        wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "mightyweb::WakeLock")
+        wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "nixsum::WakeLock")
         wakeLock.acquire()
 
         audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -165,7 +165,6 @@ class MainActivity : FlutterActivity() {
 
         val serviceIntent = Intent(this, AudioService::class.java)
         stopService(serviceIntent)
-//        android.os.Process.killProcess(android.os.Process.myPid())
         Log.d("AudioFocus", "App destroyed, audio focus released, and service stopped.")
     }
 }

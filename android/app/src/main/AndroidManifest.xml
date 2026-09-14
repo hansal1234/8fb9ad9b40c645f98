@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.mighty.web">
+    package="co.nixsum.app">
 
     <queries>
         <intent>
@@ -28,7 +28,7 @@
 
     <application
         android:icon="@mipmap/ic_launcher"
-        android:label="Mighty Web"
+        android:label="Nixsum"
         tools:ignore="Instantiatable">
 
         <meta-data
@@ -36,7 +36,7 @@
             android:value="ca-app-pub-3940256099942544~3347511713" />
 
         <activity
-            android:name="com.mighty.web.MainActivity"
+            android:name="co.nixsum.app.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:exported="true"
             android:hardwareAccelerated="true"
@@ -66,7 +66,7 @@
             android:value="2" />
 
         <service
-            android:name="com.mighty.web.AudioService"
+            android:name="co.nixsum.app.AudioService"
             android:enabled="true"
             android:foregroundServiceType="mediaPlayback"
             android:exported="false" />
@@ -76,15 +76,6 @@
             android:enabled="true"
             android:exported="false" />
 
-<!--        <provider-->
-<!--            android:name="com.pichillilorenzo.flutter_inappwebview.InAppWebViewFileProvider"-->
-<!--            android:authorities="${applicationId}.flutter_inappwebview.fileprovider"-->
-<!--            android:exported="false"-->
-<!--            android:grantUriPermissions="true">-->
-<!--            <meta-data-->
-<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
-<!--                android:resource="@xml/file_paths" />-->
-<!--        </provider>-->
         <meta-data
             android:name="com.onesignal.suppressLaunchURLs"
             android:value="true" />

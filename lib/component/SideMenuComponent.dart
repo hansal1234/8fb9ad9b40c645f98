@@ -1,16 +1,14 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:mightyweb/screen/DashboardScreen.dart';
+import 'package:nixsum/screen/DashboardScreen.dart';
 import '../app_localizations.dart';
 import '../component/SubMenuComponent.dart';
 import '../main.dart';
 import '../model/MainResponse.dart' as model1;
 import '../model/MainResponse.dart';
 import '../screen/AboutUsScreen.dart';
-import '../screen/ChooseDemo.dart';
 import '../screen/HomeScreen.dart';
-import '../screen/SetUpScreen.dart';
 import '../utils/AppWidget.dart';
 import '../utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
@@ -89,22 +87,6 @@ class SideMenuComponentState extends State<SideMenuComponent> {
                 ],
               ),
               26.height,
-              mDrawerOption(appLocalization.translate('lbl_home')!, Icons.home_filled, onTap: () {
-                if (getStringAsync(NAVIGATIONSTYLE) == NAVIGATION_STYLE_BOTTOM_NAVIGATION_SIDE_DRAWER) {
-                  DashBoardScreen().launch(context, isNewTask: true);
-                } else
-                  HomeScreen().launch(context, isNewTask: true);
-              }).visible(EnableHome == true),
-              Divider().visible(EnableDemo == true),
-              mDrawerOption(appLocalization.translate('lbl_try_demo')!, Icons.settings, onTap: () {
-                Navigator.pop(context);
-                SetUpScreen().launch(context);
-              }).visible(EnableDemo == true),
-              Divider().visible(EnableDemo == true),
-              mDrawerOption(appLocalization.translate('lbl_example')!, Icons.apps, onTap: () {
-                ChooseDemo().launch(context, isNewTask: true);
-              }).visible(EnableDemo == true),
-              Divider().visible(EnableDemo == true),
               ListView.builder(
                 itemCount: mMenuList.length,
                 shrinkWrap: true,

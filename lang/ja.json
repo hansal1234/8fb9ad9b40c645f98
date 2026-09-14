@@ -1,10 +1,10 @@
 {
-  "lbl_app_name":"マイティウェブ",
+  "lbl_app_name": "Nixsum",
   "lbl_baseUrl":"ベースのURL",
   "lbl_loaderStyle":"ローダースタイル",
   "lbl_themeStyle":"アプリのテーマスタイル",
   "lbl_home":"在宅",
-  "lbl_try_demo":"デモを試してみてください",
+
   "lbl_share_app":"アプリを共有する",
   "lbl_rate_app":"アプリを評価",
   "lbl_terms_condition":"利用規約",
@@ -19,7 +19,7 @@
   "lbl_yes":"はい",
   "lbl_no":"番号",
   "lbl_select_theme":"テーマを選択してください",
-  "lbl_example":"例",
+
   "lbl_set_up":"セットアップ",
   "lbl_dark_mode":"暗いモード",
   "lbl_light_mode":"軽量",

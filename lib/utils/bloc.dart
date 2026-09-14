@@ -8,8 +8,8 @@ abstract class Bloc {
 }
 
 class DeepLinkBloc extends Bloc {
-  static const stream = const EventChannel('mightyweb/events');
-  static const platform = const MethodChannel('mightyweb/channel');
+  static const stream = const EventChannel('nixsum/events');
+  static const platform = const MethodChannel('nixsum/channel');
 
   final _stateController = BehaviorSubject<String>();
 

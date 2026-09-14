@@ -1,10 +1,10 @@
 {
-  "lbl_app_name":"शक्तिशाली वेब",
+  "lbl_app_name": "Nixsum",
   "lbl_baseUrl":"बेस यूआरएल",
   "lbl_loaderStyle":"लोडर शैली",
   "lbl_themeStyle":"अनुप्रयोग थिम शैली",
   "lbl_home":"घर",
-  "lbl_try_demo":"डेमोको प्रयास गर्नुहोस्",
+
   "lbl_share_app":"साझेदारी साझेदारी",
   "lbl_rate_app":"दर",
   "lbl_terms_condition":"नियम र सर्त",
@@ -19,7 +19,7 @@
   "lbl_yes":"हुन्छ",
   "lbl_no":"छैन",
   "lbl_select_theme":"थिम चयन गर्नुहोस्",
-  "lbl_example":"उदाहरण",
+
   "lbl_set_up":"स्थापित गर्नु",
   "lbl_dark_mode":"कालो मोड",
   "lbl_light_mode":"हल्का भाषा",
