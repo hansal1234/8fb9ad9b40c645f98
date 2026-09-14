@@ -28,10 +28,25 @@ jobs:
 
       - name: Install NDK 29 (strips native libs of plugins)
         run: |
-          SDKMANAGER="$(command -v sdkmanager || echo "$ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager")"
+          SDKMANAGER=""
+          if command -v sdkmanager >/dev/null 2>&1; then
+            SDKMANAGER="sdkmanager"
+          else
+            for dir in "$ANDROID_SDK_ROOT" "$ANDROID_HOME" "/usr/local/lib/android/sdk"; do
+              if [ -n "$dir" ] && [ -f "$dir/cmdline-tools/latest/bin/sdkmanager" ]; then
+                SDKMANAGER="$dir/cmdline-tools/latest/bin/sdkmanager"
+                break
+              fi
+            done
+          fi
+          if [ -z "$SDKMANAGER" ]; then
+            echo "::error::sdkmanager not found"
+            exit 1
+          fi
           echo "Using sdkmanager: $SDKMANAGER"
-          yes | "$SDKMANAGER" --licenses > /dev/null 2>&1 || true
+          yes | "$SDKMANAGER" --licenses >/dev/null 2>&1 || true
           yes | "$SDKMANAGER" --install "ndk;29.0.14033849"
+          echo "NDK installed"
 
       - name: Create google-services.json
         if: env.GOOGLE_SERVICES_JSON != ''
