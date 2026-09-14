@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -23,7 +22,6 @@ AppStore appStore = AppStore();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  HttpOverrides.global = HttpOverridesSkipCertificate();
   await initialize();
 
   // List<ConnectivityResult> connectivityResult = await Connectivity().checkConnectivity  ();
