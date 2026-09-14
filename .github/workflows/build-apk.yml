@@ -82,6 +82,26 @@ jobs:
             fi
           done
 
+      - name: Set up release keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          if [ -n "$KEYSTORE_BASE64" ]; then
+            echo "$KEYSTORE_BASE64" | base64 -d > android/app/release.keystore.jks
+            cat > android/key.properties <<EOF
+            storePassword=$KEYSTORE_PASSWORD
+            keyPassword=$KEY_PASSWORD
+            keyAlias=$KEY_ALIAS
+            storeFile=release.keystore.jks
+            EOF
+            echo "release keystore configured"
+          else
+            echo "no release keystore secret; release builds will be debug-signed"
+          fi
+
       - name: Build release APK
         run: flutter build apk --release
 
@@ -90,3 +110,12 @@ jobs:
         with:
           name: app-release
           path: build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Build release AAB (Play Store)
+        run: flutter build appbundle --release
+
+      - name: Upload AAB
+        uses: actions/upload-artifact@v5
+        with:
+          name: app-release-bundle
+          path: build/app/outputs/bundle/release/app-release.aab
