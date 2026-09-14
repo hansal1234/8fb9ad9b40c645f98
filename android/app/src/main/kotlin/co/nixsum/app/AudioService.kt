@@ -16,6 +16,10 @@ import androidx.lifecycle.ProcessLifecycleOwner
 
 class AudioService : Service(), LifecycleObserver {
 
+    companion object {
+        private const val ACTION_STOP = "co.nixsum.app.ACTION_STOP"
+    }
+
     private var isMediaPlaying = false
 
     override fun onCreate() {
@@ -65,6 +69,14 @@ class AudioService : Service(), LifecycleObserver {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
+        val stopIntent = Intent(this, AudioService::class.java).setAction(ACTION_STOP)
+        val stopPendingIntent = PendingIntent.getService(
+            this,
+            1,
+            stopIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+
         val notification: Notification = NotificationCompat.Builder(this, channelId)
             .setSilent(true)
             .setContentTitle("Nixsum is running")
@@ -72,6 +84,7 @@ class AudioService : Service(), LifecycleObserver {
             .setPriority(NotificationCompat.PRIORITY_MIN)
             .setSmallIcon(R.mipmap.ic_launcher_foreground)
             .setContentIntent(pendingIntent)
+            .addAction(R.drawable.ic_close, getString(R.string.close), stopPendingIntent)
             .setVisibility(NotificationCompat.VISIBILITY_SECRET)
             .build()
 
@@ -88,6 +101,12 @@ class AudioService : Service(), LifecycleObserver {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        if (intent?.action == ACTION_STOP) {
+            isMediaPlaying = false
+            stopForeground(true)
+            stopSelf()
+            return START_NOT_STICKY
+        }
         isMediaPlaying = true
         showNotification()
         return START_STICKY
