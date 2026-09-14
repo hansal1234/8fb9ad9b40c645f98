@@ -74,6 +74,11 @@ jobs:
                 echo "proguard fix: $f"
                 sed -i "s/getDefaultProguardFile('proguard-android\.txt')/getDefaultProguardFile('proguard-android-optimize.txt')/g" "$f"
               done < <(grep -rlZ --include=build.gradle "getDefaultProguardFile('proguard-android.txt')" "$d/hosted/pub.dev" 2>/dev/null)
+              # Gradle 9 removed the no-arg 'all' on configuration containers
+              while IFS= read -r -d '' f; do
+                echo "configurations.all fix: $f"
+                sed -i 's/for (def configuration : configurations\.all)/for (def configuration : configurations)/g' "$f"
+              done < <(grep -rlZ --include=build.gradle 'for (def configuration : configurations.all)' "$d/hosted/pub.dev" 2>/dev/null)
             fi
           done
 
