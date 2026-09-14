@@ -1,0 +1,36 @@
+# Dart / Flutter build output
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Android
+android/local.properties
+android/app/local.properties
+android/.gradle/
+android/app/release/
+**/GeneratedPluginRegistrant.java
+*.jks
+*.keystore
+
+# iOS / macOS (generated, machine-specific)
+ios/Pods/
+macos/Pods/
+**/ephemeral/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+macos/Flutter/Generated.xcconfig
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# NOTE: android/app/google-services.json must be committed for CI to build.
+# If you do NOT want it public, delete it and set the GOOGLE_SERVICES_JSON
+# repository secret (base64 content) instead.

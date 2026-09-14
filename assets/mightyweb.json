@@ -1,0 +1,115 @@
+{
+  "appconfiguration": {
+    "app_name": "My App",
+    "url": "https://nixsum.co",
+    "appLanuguage": "en",
+    "isJavascriptEnable": "true",
+    "isSplashScreen": "true",
+    "isZoomFunctionality": "true",
+    "navigationStyle": "sidedrawer",
+    "header_style": "left",
+    "app_logo": "",
+    "is_walkthrough": "false",
+    "is_webrtc": "false",
+    "is_floating_button": "false",
+    "floating_button_style": "",
+    "floating_button": "",
+    "is_pull_refresh": "false",
+    "tab_style": "",
+    "clear_cookie": "false",
+    "bottom_navigation": "bottom_navigation_1",
+    "walkthrough_style": "walkthrough_style_1",
+    "isExitPopupScreen": "false",
+    "disable_header": "false",
+    "disable_footer": "false",
+    "disable_left_icon": "false"
+  },
+  "admob": {
+    "ads_type": "none",
+    "admobBannerID": "ca-app-pub-3940256099942544/6300978111",
+    "admobIntentialID": "ca-app-pub-3940256099942544/1033173712",
+    "admobBannerIDIOS": "ca-app-pub-3940256099942544/2934735716",
+    "admobIntentialIDIOS": "ca-app-pub-3940256099942544/4411468910",
+    "facebookBannerID": "",
+    "facebookIntentialID": "",
+    "facebookBannerIDIOS": "",
+    "facebookIntentialIDIOS": ""
+  },
+  "progressbar": {
+    "loaderStyle": "RotatingPlane",
+    "is_progressbar": "true"
+  },
+  "theme": {
+    "themeStyle": "Default",
+    "customColor": "#880e4f",
+    "gradientColor1": "#880e4f",
+    "gradientColor2": "#b71c1c"
+  },
+  "about": {
+    "whatsAppNumber": "",
+    "instagramUrl": "",
+    "twitterUrl": "",
+    "facebookUrl": "",
+    "callNumber": "",
+    "snapchat": "",
+    "skype": "",
+    "messenger": "",
+    "youtube": "",
+    "isShowAbout": "false",
+    "copyright": "© 2026 My App",
+    "description": ""
+  },
+  "menu_style": [
+    {
+      "id": "1",
+      "title": "Home",
+      "type": "1",
+      "image": "",
+      "url": "https://nixsum.co",
+      "status": "1",
+      "parent_id": "0",
+      "children": []
+    },
+    {
+      "id": "2",
+      "title": "Menu 2",
+      "type": "1",
+      "image": "",
+      "url": "https://nixsum.co",
+      "status": "1",
+      "parent_id": "0",
+      "children": []
+    }
+  ],
+  "header_icon": {
+    "lefticon": [],
+    "righticon": []
+  },
+  "walkthrough": [],
+  "floating_button": [],
+  "user_agent": [],
+  "tabs": [],
+  "splash_configuration": {
+    "id": "1",
+    "first_color": "#880e4f",
+    "second_color": "#b71c1c",
+    "title": "My App",
+    "enable_title": "true",
+    "enable_logo": "true",
+    "title_color": "#ffffff",
+    "enable_background": "false",
+    "splash_logo_url": "",
+    "splash_background_url": ""
+  },
+  "exitpopup_configuration": {
+    "title": "Exit App",
+    "positive_text": "OK",
+    "negative_text": "Cancel",
+    "enable_image": "false",
+    "exit_image_url": ""
+  },
+  "pages": [],
+  "share_content": {
+    "share": "https://nixsum.co"
+  }
+}
