@@ -58,16 +58,22 @@ jobs:
       - name: Get dependencies
         run: flutter pub get
 
-      - name: Patch pub-cache plugins (replace removed jcenter())
+      - name: Patch pub-cache plugins (Gradle 9 / AGP 9 compat)
         shell: bash
         run: |
           SEARCH_DIRS="$HOME/.pub-cache $PUB_CACHE $RUNNER_TOOL_CACHE/flutter/.pub-cache"
           for d in $SEARCH_DIRS; do
             if [ -n "$d" ] && [ -d "$d" ] && [ -d "$d/hosted/pub.dev" ]; then
+              # Gradle 9 removed the jcenter() repository method
               while IFS= read -r -d '' f; do
-                echo "fixing: $f"
+                echo "jcenter fix: $f"
                 sed -i 's/jcenter()/mavenCentral()/g' "$f"
               done < <(grep -rlZ --include=build.gradle 'jcenter()' "$d/hosted/pub.dev" 2>/dev/null)
+              # AGP 9 removed getDefaultProguardFile('proguard-android.txt')
+              while IFS= read -r -d '' f; do
+                echo "proguard fix: $f"
+                sed -i "s/getDefaultProguardFile('proguard-android\.txt')/getDefaultProguardFile('proguard-android-optimize.txt')/g" "$f"
+              done < <(grep -rlZ --include=build.gradle "getDefaultProguardFile('proguard-android.txt')" "$d/hosted/pub.dev" 2>/dev/null)
             fi
           done
 
