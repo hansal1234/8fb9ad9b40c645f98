@@ -26,6 +26,8 @@
   "lbl_skip": "Sauter",
   "lbl_get_start":"Commencer",
   "lbl_try_again": "Veuillez réessayer plus tard",
+  "lbl_retry": "Réessayer",
+  "msg_page_load_error": "Impossible de charger la page. Vérifiez votre connexion et réessayez.",
   "lbl_next":"Prochain",
   "lbl_finish":"Finir",
   "msg_wrong_url": "S'il vous plaît vérifier votre URL",

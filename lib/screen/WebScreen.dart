@@ -11,6 +11,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:store_redirect/store_redirect.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../app_localizations.dart';
 import '../main.dart';
 import '../utils/common.dart';
 
@@ -32,6 +33,9 @@ class WebScreen extends StatefulWidget {
 class WebScreenState extends State<WebScreen> {
   bool isWasConnectionLoss = false;
   bool mIsPermissionGrant = false;
+
+  bool _pageError = false;
+  String _pageErrorMessage = '';
 
   PullToRefreshController? pullToRefreshController;
 
@@ -148,6 +152,38 @@ class WebScreenState extends State<WebScreen> {
     }
   }
 
+  Widget mLoadError() {
+    return Container(
+      color: context.scaffoldBackgroundColor,
+      height: context.height(),
+      width: context.width(),
+      padding: EdgeInsets.all(24),
+      alignment: Alignment.center,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.wifi_off_rounded, size: 72, color: appStore.primaryColors),
+          16.height,
+          Text(AppLocalizations.of(context)!.translate('msg_page_load_error')!, style: primaryTextStyle(size: 16), textAlign: TextAlign.center),
+          8.height,
+          Text(_pageErrorMessage, style: secondaryTextStyle(size: 13), textAlign: TextAlign.center),
+          24.height,
+          OutlinedButton.icon(
+            icon: Icon(Icons.refresh),
+            label: Text(AppLocalizations.of(context)!.translate('lbl_retry')!),
+            onPressed: () {
+              setState(() {
+                _pageError = false;
+              });
+              if (getStringAsync(IS_LOADER) == "true") appStore.setLoading(true);
+              webViewController?.reload();
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -192,6 +228,7 @@ class WebScreenState extends State<WebScreen> {
               },
               onLoadStart: (controller, url) {
                 log("onLoadStart");
+                _pageError = false;
                 if (getStringAsync(IS_LOADER) == "true") appStore.setLoading(true);
                 setState(() {});
               },
@@ -249,9 +286,23 @@ class WebScreenState extends State<WebScreen> {
               },
               onReceivedError: (InAppWebViewController controller, WebResourceRequest request, WebResourceError error) {
                 log("onLoadError");
+                log("WebView error: ${error.description}");
+                if (request.isForMainFrame == true && error.errorCode != -3) {
+                  _pageError = true;
+                  _pageErrorMessage = error.description;
+                }
                 if (getStringAsync(IS_LOADER) == "true") appStore.setLoading(false);
                 setState(() {});
                 pullToRefreshController!.endRefreshing();
+              },
+              onHttpError: (InAppWebViewController controller, WebResourceResponse response) {
+                if ((response.statusCode ?? 0) >= 400) {
+                  _pageError = true;
+                  _pageErrorMessage = 'HTTP ${response.statusCode}';
+                  if (getStringAsync(IS_LOADER) == "true") appStore.setLoading(false);
+                  pullToRefreshController!.endRefreshing();
+                  setState(() {});
+                }
               },
               shouldOverrideUrlLoading: (controller, navigationAction) async {
                 var uri = navigationAction.request.url;
@@ -371,7 +422,8 @@ class WebScreenState extends State<WebScreen> {
                 return PermissionResponse(resources: request.resources, action: PermissionResponseAction.GRANT);
               },
             ).visible(isWasConnectionLoss == false),
-            Container(color: Colors.white, height: context.height(), width: context.width(), child: Loaders(name: appStore.loaderValues).center()).visible(appStore.isLoading)
+            Container(color: Colors.white, height: context.height(), width: context.width(), child: Loaders(name: appStore.loaderValues).center()).visible(appStore.isLoading),
+            if (_pageError) mLoadError(),
           ],
         ),
       ),

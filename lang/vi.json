@@ -26,6 +26,8 @@
   "lbl_skip":"Huppel.",
   "lbl_get_start":"Bắt đầu",
   "lbl_try_again": "Probeer asseblief weer sau này",
+  "lbl_retry": "Thử lại",
+  "msg_page_load_error": "Không thể tải trang. Vui lòng kiểm tra kết nối và thử lại.",
   "lbl_next": "Vervolgens.",
   "lbl_finish":"Voltooi.",
   "msg_wrong_url": "GAAN ASSEBLEIFIF JOU URL NA",

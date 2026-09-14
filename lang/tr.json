@@ -26,6 +26,8 @@
   "lbl_skip":"Atlamak",
   "lbl_get_start":"Başlamak",
   "lbl_try_again": "Lütfen daha sonra tekrar deneyiniz",
+  "lbl_retry": "Tekrar dene",
+  "msg_page_load_error": "Sayfa yüklenemedi. Bağlantınızı kontrol edip tekrar deneyin.",
   "lbl_next":"Sonraki",
   "lbl_finish":"Bitiş",
   "msg_wrong_url": "Lütfen URL'nizi kontrol edin",

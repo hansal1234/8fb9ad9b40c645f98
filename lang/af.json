@@ -26,6 +26,8 @@
   "lbl_skip": "Huppel",
   "lbl_get_start":"Begin",
   "lbl_try_again": "Probeer asseblief weer later",
+  "lbl_retry": "Probeer weer",
+  "msg_page_load_error": "Kon nie die bladsy laai nie. Gaan asseblief jou verbinding na en probeer weer.",
   "lbl_next":"Vervolgens",
   "lbl_finish":"Voltooi",
   "msg_wrong_url": "Gaan asseblief jou URL na",

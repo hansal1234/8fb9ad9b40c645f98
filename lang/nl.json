@@ -26,6 +26,8 @@
   "lbl_skip":"Overspringen",
   "lbl_get_start":"Begin",
   "lbl_try_again": "Probeer het later opnieuw",
+  "lbl_retry": "Opnieuw proberen",
+  "msg_page_load_error": "Kan de pagina niet laden. Controleer je verbinding en probeer het opnieuw.",
   "lbl_next":"Volgende",
   "lbl_finish":"Finish",
   "msg_wrong_url": "Controleer uw URL",

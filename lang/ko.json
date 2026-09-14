@@ -26,6 +26,8 @@
   "lbl_skip":"건너 뛰기",
   "lbl_get_start":"시작하다",
   "lbl_try_again": "나중에 다시 시도 해주십시오",
+  "lbl_retry": "재시도",
+  "msg_page_load_error": "페이지를 불러올 수 없습니다. 연결을 확인하고 다시 시도하세요.",
   "lbl_next":"다음",
   "lbl_finish":"마치다",
   "msg_wrong_url": "URL을 확인하십시오",
