@@ -26,6 +26,8 @@ class DeepLinkBloc extends Bloc {
       log("StreamController has listeners: ${_stateController.hasListener}");
       log("Deep link received: $d");
       _onRedirected(d);
+    }, onError: (e) {
+      log("Deep link stream error: $e");
     });
   }
 
@@ -51,7 +53,8 @@ class DeepLinkBloc extends Bloc {
       log("Invoking platform method: initialLink");
       return platform.invokeMethod('initialLink');
     } on PlatformException catch (e) {
-      return "Failed to Invoke: '${e.message}'.";
+      log("Initial deep link unavailable: ${e.message}");
+      return null;
     }
   }
 }

@@ -58,10 +58,13 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
 
 
   void _getInstanceId() async {
-    await Firebase.initializeApp();
-    FirebaseInAppMessaging.instance.triggerEvent("");
-    // FirebaseMessaging.instance.sendMessage();
-    FirebaseMessaging.instance.getInitialMessage();
+    try {
+      await Firebase.initializeApp();
+      FirebaseInAppMessaging.instance.triggerEvent("");
+      FirebaseMessaging.instance.getInitialMessage();
+    } catch (e) {
+      log('Firebase initialization skipped: $e');
+    }
   }
 
   @override

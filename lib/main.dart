@@ -32,27 +32,33 @@ void main() async {
   appStore.setDarkMode(aIsDarkMode: getBoolAsync(isDarkModeOnPref));
   appStore.setLanguage(getStringAsync(APP_LANGUAGE, defaultValue: 'en'));
 
-  if (isMobile) {
-    OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
-    OneSignal.Debug.setAlertLevel(OSLogLevel.none);
-    OneSignal.consentRequired(false);
-    OneSignal.initialize(getStringAsync(ONESINGLE, defaultValue: mOneSignalID));
-    OneSignal.Notifications.addForegroundWillDisplayListener((event) {
-      print('NOTIFICATION WILL DISPLAY LISTENER CALLED WITH: ${event.notification.jsonRepresentation()}');
-      event.preventDefault();
-      event.notification.display();
-    });
-  }
   MainResponse? config;
   try {
     config = await fetchData();
   } catch (e) {
     config = null;
   }
+  if (isMobile) {
+    final oneSignalId = getStringAsync(ONESINGLE);
+    if (_isValidOneSignalAppId(oneSignalId)) {
+      OneSignal.Debug.setLogLevel(OSLogLevel.none);
+      OneSignal.Debug.setAlertLevel(OSLogLevel.none);
+      OneSignal.consentRequired(false);
+      OneSignal.initialize(oneSignalId);
+      OneSignal.Notifications.addForegroundWillDisplayListener((event) {
+        event.preventDefault();
+        event.notification.display();
+      });
+    }
+  }
   if (isMobile && getStringAsync(ADD_TYPE, defaultValue: NONE) != NONE) {
     MobileAds.instance.initialize();
   }
   runApp(MyApp(config: config));
+}
+
+bool _isValidOneSignalAppId(String value) {
+  return RegExp(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$').hasMatch(value);
 }
 
 class MyApp extends StatefulWidget {

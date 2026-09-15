@@ -15,16 +15,17 @@ class DeepLinkWidget extends StatelessWidget {
         if (!snapshot.hasData) {
           return SizedBox(height: 0);
         } else {
-          if (snapshot.data!.isNotEmpty) {
+          final deepLink = Uri.tryParse(snapshot.data!);
+          if (deepLink != null && (deepLink.scheme == 'https' || deepLink.scheme == 'http')) {
             Future.microtask(
               () {
-                print("Navigating to WebScreen with deep link: ${snapshot.data}");
-                appStore.setDeepLinkURL(snapshot.data!.toString());
+                print("Navigating to WebScreen with deep link: $deepLink");
+                appStore.setDeepLinkURL(deepLink.toString());
                 print("AppStore Deep link:" + appStore.deepLinkURL.toString());
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => WebScreen(mInitialUrl: snapshot.data),
+                    builder: (_) => WebScreen(mInitialUrl: deepLink.toString()),
                   ),
                 );
               },
