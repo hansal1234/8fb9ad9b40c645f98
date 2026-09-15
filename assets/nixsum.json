@@ -26,10 +26,10 @@
   },
   "admob": {
     "ads_type": "none",
-    "admobBannerID": "ca-app-pub-3940256099942544/6300978111",
-    "admobIntentialID": "ca-app-pub-3940256099942544/1033173712",
-    "admobBannerIDIOS": "ca-app-pub-3940256099942544/2934735716",
-    "admobIntentialIDIOS": "ca-app-pub-3940256099942544/4411468910",
+    "admobBannerID": "",
+    "admobIntentialID": "",
+    "admobBannerIDIOS": "",
+    "admobIntentialIDIOS": "",
     "facebookBannerID": "",
     "facebookIntentialID": "",
     "facebookBannerIDIOS": "",
@@ -58,8 +58,8 @@
     "isShowAbout": "true",
     "copyright": "© 2026 Nixsum",
     "description": "",
-    "privacy_policy_url": "",
-    "terms_conditions_url": ""
+    "privacy_policy_url": "https://nixsum.co/privacy-policy",
+    "terms_conditions_url": "https://nixsum.co/terms-of-service"
   },
   "menu_style": [
     {

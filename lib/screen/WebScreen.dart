@@ -42,7 +42,7 @@ class WebScreenState extends State<WebScreen> {
   InAppWebViewSettings options = InAppWebViewSettings(
       // crossPlatform: InAppWebViewOptions(
           useShouldOverrideUrlLoading: true,
-          allowBackgroundAudioPlaying: true,
+          allowBackgroundAudioPlaying: false,
           userAgent: getStringAsync(USER_AGENT),
           allowsAirPlayForMediaPlayback: true,
           mediaPlaybackRequiresUserGesture: false,
@@ -106,6 +106,13 @@ class WebScreenState extends State<WebScreen> {
     );
     final match = usernameRegex.firstMatch(url);
     return match?.group(1);
+  }
+
+  bool _isTrustedOrigin(String origin) {
+    final appUrl = getStringAsync(URL).isNotEmpty ? getStringAsync(URL) : 'https://nixsum.co';
+    final appUri = Uri.tryParse(appUrl);
+    final originUri = Uri.tryParse(origin);
+    return appUri != null && originUri != null && originUri.scheme == 'https' && originUri.host == appUri.host;
   }
 
   Future<bool> checkPermission() async {
@@ -403,23 +410,29 @@ class WebScreenState extends State<WebScreen> {
                 launchUrl(Uri.parse(downloadStartRequest.url.toString()), mode: LaunchMode.externalApplication);
               },
               onGeolocationPermissionsShowPrompt: (InAppWebViewController controller, String origin) async {
-                await Permission.location.request();
-                return Future.value(GeolocationPermissionShowPromptResponse(origin: origin, allow: true, retain: true));
+                return GeolocationPermissionShowPromptResponse(origin: origin, allow: false, retain: false);
               },
               onPermissionRequest: (InAppWebViewController controller, PermissionRequest request) async {
-                List resources = request.resources;
-                if (resources.length >= 1) {
-                } else {
-                  resources.forEach((element) async {
-                    if (element.contains("AUDIO_CAPTURE")) {
-                      await Permission.microphone.request();
-                    }
-                    if (element.contains("VIDEO_CAPTURE")) {
-                      await Permission.camera.request();
-                    }
-                  });
+                final origin = request.origin.toString();
+                final allowMediaCapture = _isTrustedOrigin(origin) && getStringAsync(IS_WEBRTC) == "true";
+                if (!allowMediaCapture) {
+                  return PermissionResponse(resources: request.resources, action: PermissionResponseAction.DENY);
                 }
-                return PermissionResponse(resources: request.resources, action: PermissionResponseAction.GRANT);
+
+                final allowedResources = <PermissionResourceType>[];
+                for (final resource in request.resources) {
+                  final resourceName = resource.toString();
+                  if (resourceName.contains('AUDIO_CAPTURE') || resourceName.contains('MICROPHONE')) {
+                    if (await Permission.microphone.request().isGranted) allowedResources.add(resource);
+                  } else if (resourceName.contains('VIDEO_CAPTURE') || resourceName.contains('CAMERA')) {
+                    if (await Permission.camera.request().isGranted) allowedResources.add(resource);
+                  }
+                }
+
+                return PermissionResponse(
+                  resources: allowedResources,
+                  action: allowedResources.isEmpty ? PermissionResponseAction.DENY : PermissionResponseAction.GRANT,
+                );
               },
             ).visible(isWasConnectionLoss == false),
             Container(color: Colors.white, height: context.height(), width: context.width(), child: Loaders(name: appStore.loaderValues).center()).visible(appStore.isLoading),

@@ -37,7 +37,6 @@ void main() async {
     OneSignal.Debug.setAlertLevel(OSLogLevel.none);
     OneSignal.consentRequired(false);
     OneSignal.initialize(getStringAsync(ONESINGLE, defaultValue: mOneSignalID));
-    OneSignal.Notifications.requestPermission(true);
     OneSignal.Notifications.addForegroundWillDisplayListener((event) {
       print('NOTIFICATION WILL DISPLAY LISTENER CALLED WITH: ${event.notification.jsonRepresentation()}');
       event.preventDefault();
