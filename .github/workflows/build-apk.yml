@@ -89,15 +89,21 @@ jobs:
           KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: |
-          if [ -n "$KEYSTORE_BASE64" ]; then
-            echo "$KEYSTORE_BASE64" | base64 -d > android/app/release.keystore.jks
-            printf 'storePassword=%s\nkeyPassword=%s\nkeyAlias=%s\nstoreFile=release.keystore.jks\n' \
-              "$KEYSTORE_PASSWORD" "$KEY_PASSWORD" "$KEY_ALIAS" > android/key.properties
-            echo "release keystore configured"
-          else
-            echo "::error::ANDROID_KEYSTORE_BASE64 is missing; refusing to create a debug-signed release artifact"
+          if [ -z "$KEYSTORE_BASE64" ] || [ -z "$KEYSTORE_PASSWORD" ] || [ -z "$KEY_ALIAS" ] || [ -z "$KEY_PASSWORD" ]; then
+            echo "::error::All Android signing secrets are required; refusing to create a debug-signed release artifact"
             exit 1
           fi
+          if ! echo "$KEYSTORE_BASE64" | base64 --decode > android/app/release.keystore.jks; then
+            echo "::error::ANDROID_KEYSTORE_BASE64 is not valid Base64"
+            exit 1
+          fi
+          if [ ! -s android/app/release.keystore.jks ]; then
+            echo "::error::Decoded release keystore is empty"
+            exit 1
+          fi
+          printf 'storePassword=%s\nkeyPassword=%s\nkeyAlias=%s\nstoreFile=release.keystore.jks\n' \
+            "$KEYSTORE_PASSWORD" "$KEY_PASSWORD" "$KEY_ALIAS" > android/key.properties
+          echo "release keystore configured"
 
       - name: Build release APK
         run: flutter build apk --release
