@@ -26,7 +26,7 @@ void main() async {
 
   // List<ConnectivityResult> connectivityResult = await Connectivity().checkConnectivity  ();
   List<ConnectivityResult> connectivityResults = await Connectivity().checkConnectivity();
-  ConnectivityResult connectivityResult = connectivityResults.first;
+  ConnectivityResult connectivityResult = connectivityResults.isNotEmpty ? connectivityResults.first : ConnectivityResult.none;
   appStore.setConnectionState(connectivityResult);
 
   appStore.setDarkMode(aIsDarkMode: getBoolAsync(isDarkModeOnPref));

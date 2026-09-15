@@ -95,7 +95,8 @@ jobs:
               "$KEYSTORE_PASSWORD" "$KEY_PASSWORD" "$KEY_ALIAS" > android/key.properties
             echo "release keystore configured"
           else
-            echo "no release keystore secret; release builds will be debug-signed"
+            echo "::error::ANDROID_KEYSTORE_BASE64 is missing; refusing to create a debug-signed release artifact"
+            exit 1
           fi
 
       - name: Build release APK
